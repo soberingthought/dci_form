@@ -111,7 +111,7 @@ shortMonths:["\u4e00\u6708","\u4e8c\u6708","\u4e09\u6708","\u56db\u6708","\u4e94
           var title_beginning = "The Daily Check-In for ";
           var title_ending = ": Just for today, I am NOT drinking!";
           var example_date = getTomorrowsDate();
-          var title_text = title_beginning + strftime('%B, %o', example_date) + title_ending;
+          var title_text = title_beginning + strftime('%A, %B %o', example_date) + title_ending;
           $("#title").html(title_text);
           $("#copy_title").attr("data-clipboard-text", title_text);
         };
