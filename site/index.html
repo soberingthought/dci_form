@@ -131,10 +131,18 @@
           tomorrow.setDate(tomorrow.getDate() + 1);
           return tomorrow;
         };
+
+        var getDateAsUTC = function(date) {
+          var now_utc =  Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate(),
+          date.getUTCHours(), date.getUTCMinutes(), date.getUTCSeconds());
+
+          return new Date(now_utc);
+        };
+
         var setupTitle = function() {
           var title_beginning = "The Daily Check-In for ";
           var title_ending = ": Just for today, I am NOT drinking!";
-          var example_date = getTomorrowsDate();
+          var example_date = getDateAsUTC(getTomorrowsDate());
           var title_text = title_beginning + strftime('%A, %B %o', example_date) + title_ending;
           $("#title").html(title_text);
           $("#copy_title").attr("data-clipboard-text", title_text);
