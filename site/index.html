@@ -142,8 +142,13 @@
 
         var getTomorrowAsUTC = function(date) {
           var date = new Date();
-          var now_utc =  Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate() + 1,
-          date.getUTCHours(), date.getUTCMinutes(), date.getUTCSeconds());
+          var now_utc =  Date.UTC(date.getUTCFullYear(),
+            date.getUTCMonth(),
+            date.getUTCDate(),
+            date.getUTCHours() + 6,
+            date.getUTCMinutes(),
+            date.getUTCSeconds()
+          );
 
           return new Date(now_utc);
         };
